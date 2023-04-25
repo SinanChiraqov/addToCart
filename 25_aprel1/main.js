@@ -17,17 +17,9 @@ const initialState = {
 let productPrice;
 let productName;
 
-
 function addToWishlist(item) {
-  localStorage.setItem(
-    "wishlistItems",
-    JSON.stringify(item));
-
-    document.querySelector('body').innerHTML = `
-        
-    `
+  localStorage.setItem("wishlistItems", JSON.stringify(item));
 }
-
 
 const addProduct = (e) => {
   productPrice = price_input.value;
@@ -56,7 +48,9 @@ const addProduct = (e) => {
         <del id="product_price">$${item.price}.00</del>-$50.00
         </p>
         <button class="btn1">Add to</button>
-        <button onClick=${addToWishlist(item)} class="add_to_wishlist_btn">Wishlist</button>
+        <button data-toggle="modal2" data-target="#exampleModal2" onClick=${addToWishlist(
+          item
+        )} class="add_to_wishlist_btn">Wishlist</button>
     </div> 
     `;
   });
